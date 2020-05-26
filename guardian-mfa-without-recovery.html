@@ -216,6 +216,8 @@
 
         function postCallServer(authPayload) {
           {% if postActionURL %}
+          // use a UI element to control remember browser option
+          authPayload.rememberBrowser = true;
           auth0GuardianJS.formPostHelper("{{ postActionURL }}", authPayload);
           {% endif %}
         }
